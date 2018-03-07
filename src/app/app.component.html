@@ -19,7 +19,10 @@
     <div class="container">
         <div class="row">
             <div class="col m6">
-                <img src="assets/img/image.jpg" alt="" class="responsive-img">
+                <!-- <foto url="assets/img/image.jpg" titulo="Teste1"></foto>
+                <foto url="https://3.bp.blogspot.com/-Sd4bG31UZ4/WA_mMwqYkyI/AAAAAAAACP4/BiFIdy8c9gU-93TUx_lbHpePVCM0TbrggCLcB/s640/o-que-fazer-dublin.jpg" titulo="Teste2"></foto> -->
+                
+                <foto *ngFor="let foto of listaFotos" url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
             </div>
         </div>
     </div>
