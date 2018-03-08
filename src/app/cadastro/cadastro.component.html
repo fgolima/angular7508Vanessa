@@ -1,0 +1,41 @@
+<header class="card-panel lime darken-1">
+    <h1 class="center-align">Cadastro de Fotos</h1>
+</header>
+<main class="container">
+
+    <div class="row">
+        <form class="col m7" (submit)="salvar($event)">
+            <div>
+                {{foto.titulo}}
+                {{foto.url}}
+                {{foto.descricao}}
+            </div>
+            <div class="input-field col s12">
+                <input id="titulo" type="text" class="validate" 
+                    (input)="foto.titulo = $event.target.value" 
+                    [value]="foto.titulo">
+                <label for="titulo">Titulo</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="url" type="text" class="validate"
+                    (input)="foto.url = $event.target.value" 
+                    [value]="foto.url">
+                <label for="url">Url</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="descricao" class="materialize-textarea"
+                    (input)="foto.descricao = $event.target.value" 
+                    [value]="foto.descricao"></textarea>
+                <label for="descricao">Descricao</label>
+            </div>
+
+            <a routerLink="" class="btn">Voltar</a>
+            <button class="btn">Salvar</button>
+        </form>
+        <aside class="col m5">
+            <h3>Preview</h3>
+        </aside>
+    </div>
+</main>
+
+      

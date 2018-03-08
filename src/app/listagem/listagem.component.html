@@ -1,0 +1,40 @@
+<header class="card-panel lime darken-1">
+        <h1 class="center-align">CaelumPic</h1>
+    </header>
+    <main class="container">
+
+       <div class="row">
+           <div class="col m12">
+               <a routerLink="/cadastro" class="btn">Nova foto</a>
+           </div>
+       </div>
+
+    <!-- <div class="card">
+        <div class="card-image">
+        <img src='./assets/img/image.jpg' class="responsive-img">
+        <span class="card-title">Card Title</span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red">
+            <i class="material-icons">+</i>
+        </a>
+        
+        </div>
+        <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+        </div>
+    </div> -->
+
+        <div class="row">
+            <!-- <div class="col m6"> -->
+                <!-- <foto url="assets/img/image.jpg" titulo="Teste1"></foto>
+                <foto url="https://3.bp.blogspot.com/-Sd4bG31UZ4/WA_mMwqYkyI/AAAAAAAACP4/BiFIdy8c9gU-93TUx_lbHpePVCM0TbrggCLcB/s640/o-que-fazer-dublin.jpg" titulo="Teste2"></foto> -->
+                
+                <!-- <foto *ngFor="let foto of listaFotos" url="{{foto.url}}" 
+                titulo="{{foto.titulo}}"></foto> -->
+                <card class="col m2" *ngFor="let foto of listaFotos" titulo="{{foto.titulo}}">
+                    <foto url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
+                </card>
+            <!-- </div> -->
+        </div>
+
+    </main>

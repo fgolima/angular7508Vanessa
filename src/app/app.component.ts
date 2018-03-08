@@ -1,5 +1,4 @@
 import {Component} from '@angular/core'
-import { HttpClient } from "@angular/common/http"
 
 @Component({
   selector : 'app-root',
@@ -26,22 +25,9 @@ import { HttpClient } from "@angular/common/http"
                 </div>
               </main>
   `,*/
-  templateUrl : './app.component.html',
+  //templateUrl : './app.component.html',
+  template : '<router-outlet></router-outlet>',
   //poderia utilizar arquivos de styles
   styles : ['h1 {color:red}']
 })
-export class AppComponent {
-
-  listaFotos
-
-  constructor(conexaoApi: HttpClient) {
-    //console.log('construiu a app');
-
-    conexaoApi.get('http://localhost:3000/v1/fotos')
-              .subscribe( fotosApi => 
-                //console.log(fotosApi)
-                this.listaFotos = fotosApi
-                , erro => console.log(erro)
-              )
-  }
-}   
+export class AppComponent {}  
