@@ -4,27 +4,23 @@
 <main class="container">
 
     <div class="row">
-        <form class="col m7" (submit)="salvar($event)">
-            <div>
-                {{foto.titulo}}
-                {{foto.url}}
-                {{foto.descricao}}
-            </div>
+        <!-- <form class="col m7" (submit)="salvar($event)"> -->
+        <form class="col m7" (ngSubmit)="salvar()">
             <div class="input-field col s12">
                 <input id="titulo" type="text" class="validate" 
-                    (input)="foto.titulo = $event.target.value" 
+                    [(ngModel)]="foto.titulo" name="titulo"
                     [value]="foto.titulo">
                 <label for="titulo">Titulo</label>
             </div>
             <div class="input-field col s12">
                 <input id="url" type="text" class="validate"
-                    (input)="foto.url = $event.target.value" 
+                    [(ngModel)]="foto.url" name="url"
                     [value]="foto.url">
                 <label for="url">Url</label>
             </div>
             <div class="input-field col s12">
                 <textarea id="descricao" class="materialize-textarea"
-                    (input)="foto.descricao = $event.target.value" 
+                    [(ngModel)]="foto.descricao" name="descricao"
                     [value]="foto.descricao"></textarea>
                 <label for="descricao">Descricao</label>
             </div>
@@ -34,6 +30,16 @@
         </form>
         <aside class="col m5">
             <h3>Preview</h3>
+
+            <div>
+                Titulo: {{foto.titulo}}
+                Url: {{foto.url}}
+                Imagem: 
+                <card titulo="{{foto.titulo}}" buttonVisible="false">
+                    <foto url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
+                </card>
+                Descricao: {{foto.descricao}}
+            </div>
         </aside>
     </div>
 </main>

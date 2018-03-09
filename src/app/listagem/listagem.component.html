@@ -33,6 +33,9 @@
                 titulo="{{foto.titulo}}"></foto> -->
                 <card class="col m2" *ngFor="let foto of listaFotos" titulo="{{foto.titulo}}">
                     <foto url="{{foto.url}}" titulo="{{foto.titulo}}"></foto>
+                    <button class="btn-floating waves-effect waves-light red" (click)="deletar(foto)">
+                        <i class="material-icons">delete</i>
+                    </button> 
                 </card>
             <!-- </div> -->
         </div>

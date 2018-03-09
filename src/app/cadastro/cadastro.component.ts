@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FotoComponent } from '../foto/foto.component';
-import { HttpClient } from '@angular/common/http';
+import { FotoService } from "../servicos/foto.service";
 
 @Component({
   selector: 'app-cadastro',
@@ -11,17 +11,17 @@ export class CadastroComponent implements OnInit {
 
   foto = new FotoComponent()
 
-  constructor(conexaoApi: HttpClient) { }
+  constructor(private servico: FotoService) { }
 
   ngOnInit() {
+  
   }
 
-  salvar(evento: Event){
-
-    //
-    evento.preventDefault();
-    // console.log('salvou !');
-    // console.log(this.foto);
-    
+  salvar(foto : FotoComponent){
+      this.servico.cadastrar(this.foto)
+              .subscribe( 
+                () => this.foto = new FotoComponent()
+                , erro => console.log(erro)
+              )
   }
 }
