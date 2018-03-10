@@ -4,16 +4,21 @@
 <main class="container">
 
     <div class="row">
-        <!-- <form class="col m7" (submit)="salvar($event)"> -->
+        <div class="row" *ngIf="mensagem">
+            <div class="col m12">
+                <p class="card green lighten-1">{{mensagem}} </p>
+            </div>
+        </div>
+        
         <form class="col m7" (ngSubmit)="salvar()">
             <div class="input-field col s12">
-                <input id="titulo" type="text" class="validate" 
+                <input id="titulo" type="text" 
                     [(ngModel)]="foto.titulo" name="titulo"
                     [value]="foto.titulo">
                 <label for="titulo">Titulo</label>
             </div>
             <div class="input-field col s12">
-                <input id="url" type="text" class="validate"
+                <input id="url" type="text" 
                     [(ngModel)]="foto.url" name="url"
                     [value]="foto.url">
                 <label for="url">Url</label>
